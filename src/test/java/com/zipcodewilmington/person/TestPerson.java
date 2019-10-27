@@ -95,4 +95,36 @@ public class TestPerson {
         Integer actual = person.getAge();
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testNewPersonConstructor() {
+        // Given
+        String expectedVitalStatus = "Alive";
+        String expectedRace = "African American";
+        String expectedEyeColor = "Brown";
+        Boolean expectedEmployment = true;
+        String expectedHairColor = "Black";
+
+
+        // When
+        Person person = new Person(expectedVitalStatus, expectedRace, expectedEyeColor, expectedEmployment, expectedHairColor);
+
+        // Then
+        String actualName = person.getName();
+        Integer actualAge = person.getAge();
+
+        String actualVitalStatus = person.getVitalStatus();
+        String actualRace = person.getRace();
+        String actualEyeColor = person.getEyeColor();
+        Boolean actualEmployment = person.getEmployed();
+        String actualHairColor = person.getHairColor();
+
+
+
+        Assert.assertEquals(expectedVitalStatus, actualVitalStatus);
+        Assert.assertEquals(expectedRace, actualRace);
+        Assert.assertEquals(expectedEyeColor, actualEyeColor);
+        Assert.assertEquals(expectedEmployment, actualEmployment);
+        Assert.assertEquals(expectedHairColor, actualHairColor);
+    }
 }
